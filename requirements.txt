@@ -1,5 +1,5 @@
 flask==3.0.2
-scikit-learn>=1.4.0
+scikit-learn==1.4.0
 scikit-image==0.22.0
 unzip==1.0.0
 joblib==1.3.2

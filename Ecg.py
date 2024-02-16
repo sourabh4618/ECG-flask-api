@@ -11,7 +11,6 @@ from natsort import natsorted
 from PIL import Image
 import io
 
-
 class ECG:
     def DividingLeads(self, image):
         image_data = image.read()
@@ -35,7 +34,6 @@ class ECG:
         # All Leads in a list
         Leads = [Lead_1, Lead_2, Lead_3, Lead_4, Lead_5, Lead_6, Lead_7, Lead_8, Lead_9, Lead_10, Lead_11, Lead_12,
                  Lead_13]
-
         return Leads
 
     def SignalExtraction_Scaling(self, Leads):

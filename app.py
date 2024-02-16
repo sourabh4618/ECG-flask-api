@@ -7,7 +7,12 @@ ecg = ECG()
 app = flask.Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def home():
+    return "Ecg Insights"
+
+
+@app.route('/predict', methods=['POST'])
 def handle_request():
     if 'image' not in request.files:
         return "no image is provided"
@@ -37,4 +42,5 @@ def handle_request():
     return ecg.ModelLoad_predict(ecg_final)
 
 
-app.run(host="0.0.0.0", port=5000, debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
