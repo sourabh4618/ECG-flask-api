@@ -43,4 +43,22 @@ def handle_request():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
+#if __name__ == '__main__':
+#    from gunicorn import config
+#    from gunicorn.workers.sync import SyncWorker
+
+#    class CustomWorker(SyncWorker):
+#        def run(self):
+#            config._use_forwarded_for = True  # Enable if running behind a proxy
+#            super().run()
+
+#    config.Worker = "app:CustomWorker"
+
+#    options = {
+#        'bind': '0.0.0.0:5000',
+#        'workers': 4,  # You can adjust the number of workers
+#    }
+
+#    from gunicorn.app.wsgiapp import WSGIApplication
+#    WSGIApplication("%(prog)s [OPTIONS]").run()

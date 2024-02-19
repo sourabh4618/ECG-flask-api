@@ -19,3 +19,4 @@ RUN python -m pip install --upgrade pip
 
 # Run the Flask app on container startup.
 CMD ["python", "app.py"]
+#CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
